@@ -35,7 +35,7 @@
     </div>  
     
     {{-- Table --}}
-    <div class="mt-4 px-4">
+    <div class="mt-4 px-4 pb-5">
       <div class="row">
         <div class="col-md-12">
           <div class="card border-0 shadow rounded p-4">
@@ -43,20 +43,18 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Kode Barang</th>
-                  <th class="w-50" scope="col">Nama Barang</th>
-                  <th scope="col">Harga</th>
-                  <th scope="col">Stok</th>
+                  <th scope="col">Tgl Pembelian</th>
+                  <th class="w-25" scope="col">Nama Pembeli</th>
+                  <th scope="col">Alamat</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($products as $key => $item)
+                @foreach ($sales as $key => $item)
                 <tr>
                   <td scope="row">{{ $key+1 }}</td>
-                  <td>{{ $item->code }}</td>
-                  <td>{{ $item->name }}</td>
-                  <td>{{ $item->price }}</td>
-                  <td>{{ $item->stock }}</td>
+                  <td>{{ $item->date }}</td>
+                  <td><a href="sales/{{ $item->id }}">{{ $item->buyer }}</a></td>
+                  <td>{{ $item->buyer_address }}</td>
                 </tr>    
                 @endforeach
               </tbody>

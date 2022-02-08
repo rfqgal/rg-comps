@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Products - RG Comps</title>
+  <title>Sales - RG Comps</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
   <main class="container">
     
     <div class="px-4 pt-4">
-      <span class="fs-3">Products</span>
+      <span class="fs-3">Sales</span>
     </div>
     
     {{-- Table --}}
@@ -32,24 +32,18 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Kode Barang</th>
-                  <th class="w-50" scope="col">Nama Barang</th>
-                  <th scope="col">Harga</th>
-                  <th scope="col">Stok</th>
+                  <th scope="col">Tgl Pembelian</th>
+                  <th class="w-25" scope="col">Nama Pembeli</th>
+                  <th scope="col">Alamat</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($products as $key => $item)
+                @foreach ($sales as $key => $item)
                 <tr>
                   <td scope="row">{{ $key+1 }}</td>
-                  <td>{{ $item->code }}</td>
-                  <td>
-                    <a href="products/{{ $item->id }}">
-                      {{ $item->name }}
-                    </a>
-                  </td>
-                  <td>{{ $item->price }}</td>
-                  <td>{{ $item->stock }}</td>
+                  <td>{{ $item->date }}</td>
+                  <td><a href="sales/{{ $item->id }}">{{ $item->buyer }}</a></td>
+                  <td>{{ $item->buyer_address }}</td>
                 </tr>    
                 @endforeach
               </tbody>
