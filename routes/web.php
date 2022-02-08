@@ -19,3 +19,8 @@ Route::get('/', function () {
     $products = Products::all();    
     return view('dashboard', ['products' => $products]);
 });
+
+Route::get('/products', function () {
+    $products = Products::all();    
+    return view('products', ['products' => $products]);
+});
