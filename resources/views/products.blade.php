@@ -43,11 +43,7 @@
                 <tr>
                   <td scope="row">{{ $key+1 }}</td>
                   <td>{{ $item->code }}</td>
-                  <td>
-                    <a href="products/{{ $item->id }}">
-                      {{ $item->name }}
-                    </a>
-                  </td>
+                  <td>{{ $item->name }}</td>
                   <td>{{ $item->price }}</td>
                   <td>{{ $item->stock }}</td>
                 </tr>    

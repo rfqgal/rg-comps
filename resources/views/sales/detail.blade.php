@@ -52,11 +52,7 @@
                 <tr>
                   <td scope="row">{{ $key+1 }}</td>
                   <td>{{ $item->product_code }}</td>
-                  <td>
-                    <a href="products/{{ $item->product_id }}">
-                      {{ $item->name }}
-                    </a>
-                  </td>
+                  <td>{{ $item->name }}</td>
                   <td>{{ $item->price }}</td>
                   <td>{{ $item->quantity }}</td>
                   <td>{{ $item->total }}</td>
