@@ -21,7 +21,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $sales = Sale::orderByDesc('date')->take(10)->get();
+    $sales = DB::table('sales as t1') 
+        ->join('sales_details as t2', 't1.id', '=', 't2.sale_id')
+        ->select('t1.*', 't2.total')
+        ->orderByDesc('date')
+        ->take(10)
+        ->get();
     return view('dashboard', ['sales' => $sales]);
 });
 
@@ -31,8 +36,11 @@ Route::get('/products', function () {
 });
 
 Route::get('/sales', function () {
-    // $sales = Sale::paginate(15);
-    $sales = Sale::orderByDesc('date')->get();
+    $sales = DB::table('sales as t1') 
+    ->join('sales_details as t2', 't1.id', '=', 't2.sale_id')
+    ->select('t1.*', 't2.total')
+    ->orderByDesc('date')
+    ->get();
     return view('sales', ['sales' => $sales]);
 });
 

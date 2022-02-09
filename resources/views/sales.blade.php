@@ -32,18 +32,20 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Tgl Pembelian</th>
                   <th class="w-25" scope="col">Nama Pembeli</th>
                   <th scope="col">Alamat</th>
+                  <th scope="col">Tgl Pembelian</th>
+                  <th scope="col">Total Penjualan</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($sales as $key => $item)
                 <tr>
                   <td scope="row">{{ $key+1 }}</td>
-                  <td>{{ $item->date }}</td>
                   <td><a href="sales/{{ $item->id }}">{{ $item->buyer }}</a></td>
                   <td>{{ $item->buyer_address }}</td>
+                  <td>{{ $item->date }}</td>
+                  <td>{{ $item->total }}</td>
                 </tr>    
                 @endforeach
               </tbody>
