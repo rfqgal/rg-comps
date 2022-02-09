@@ -23,7 +23,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Charts $charts)
     {
         $charts->register([
-            \App\Charts\SalesChart::class
+            \App\Charts\SalesChart::class,
+            \App\Charts\CategoryChart::class
         ]);
     }
 

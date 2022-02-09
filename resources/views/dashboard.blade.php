@@ -20,7 +20,7 @@
   <main class="container">
     
     <div class="px-4 pt-4">
-      <span class="fs-3">Dashboard</span>
+      <h1 class="fs-3">Dashboard</h1>
     </div>
     
     {{-- Chart --}}
@@ -28,14 +28,23 @@
       <div class="row">
         <div class="col-md-12">
           <div class="card border-0 shadow rounded p-4">
-            <div id="chart" style="height: 320px;"></div>
+            <div class="d-flex">
+              <div class="w-75" id="sales-chart" style="height: 320px;"></div>
+              <div class="w-25" id="category-chart" style="height: 320px;"></div>
+            </div>
           </div>
+          {{-- <div class="card border-0 shadow rounded p-4">
+          </div> --}}
         </div>
       </div>
     </div>  
     
+    <div class="px-4 pt-4">
+      <h2 class="fs-4">Latest sales</h2>
+    </div>
+
     {{-- Table --}}
-    <div class="mt-4 px-4 pb-5">
+    <div class="mt-2 px-4 pb-5">
       <div class="row">
         <div class="col-md-12">
           <div class="card border-0 shadow rounded p-4">
@@ -72,16 +81,29 @@
 {{-- Script --}}
 <script>
   const chart = new Chartisan({
-    el: '#chart',
+    el: '#sales-chart',
     url: "@chart('sales_chart')",
     hooks: new ChartisanHooks()
       .colors(['#4299E1'])
       .responsive()
       .beginAtZero()
       .legend({ position: 'bottom' })
-      .title('Last 30 days')
+      .title('Last 30 days sales')
       .datasets('bar'),
       // .datasets([{ type: 'line', fill: false }, 'bar']),
+  });
+  const pie = new Chartisan({
+    el: '#category-chart',
+    url: "@chart('category_chart')",
+    hooks: new ChartisanHooks()
+      .pieColors()
+      .legend({ position: 'bottom' })
+      .title('Category Charts')
+      .datasets('pie')
+      .options({ 
+        tooltip: true,
+        tooltipItems: ['25%','25%','25%','25%'],
+      })
   });
 </script>
 
