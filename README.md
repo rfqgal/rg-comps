@@ -6,3 +6,5 @@ To run the Bootstrap, command:
 
 Then run Laravel in your localhost, command:
 `php artisan serve`
+
+Don't forget to Migrate and Seed to get the dummy database
