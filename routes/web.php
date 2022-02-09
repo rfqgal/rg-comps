@@ -4,6 +4,7 @@ use App\Http\Controllers\ProductController;
 use App\Models\Product;
 use App\Models\Sale;
 use App\Models\SalesDetail;
+use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $sales = Sale::select()->orderByDesc('date')->take(10)->get();
+    $sales = Sale::orderByDesc('date')->take(10)->get();
     return view('dashboard', ['sales' => $sales]);
 });
 
@@ -31,7 +32,7 @@ Route::get('/products', function () {
 
 Route::get('/sales', function () {
     // $sales = Sale::paginate(15);
-    $sales = Sale::select()->orderByDesc('date')->get();
+    $sales = Sale::orderByDesc('date')->get();
     return view('sales', ['sales' => $sales]);
 });
 

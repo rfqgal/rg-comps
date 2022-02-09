@@ -42,7 +42,6 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
                   <th scope="col">Tgl Pembelian</th>
                   <th class="w-25" scope="col">Nama Pembeli</th>
                   <th scope="col">Alamat</th>
@@ -51,7 +50,6 @@
               <tbody>
                 @foreach ($sales as $key => $item)
                 <tr>
-                  <td scope="row">{{ $key+1 }}</td>
                   <td>{{ $item->date }}</td>
                   <td><a href="sales/{{ $item->id }}">{{ $item->buyer }}</a></td>
                   <td>{{ $item->buyer_address }}</td>
@@ -77,13 +75,13 @@
     el: '#chart',
     url: "@chart('sales_chart')",
     hooks: new ChartisanHooks()
-      .colors(['#ECC94B', '#4299E1'])
+      .colors(['#4299E1'])
       .responsive()
       .beginAtZero()
       .legend({ position: 'bottom' })
-      .title('This is a sample chart using chartisan!')
-      // .datasets('bar'),
-      .datasets([{ type: 'line', fill: false }, 'bar']),
+      .title('Last 30 days')
+      .datasets('bar'),
+      // .datasets([{ type: 'line', fill: false }, 'bar']),
   });
 </script>
 
