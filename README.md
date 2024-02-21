@@ -1,5 +1,7 @@
 ## RG Comps
-Computer hardware online shop, made by Laravel and Bootstrap.
+This shop provide your computer needs
+
+- made with blood, sweat, and, tears by Laravel and Bootstrap.
 
 To run the Bootstrap, command:
 `npm install && npm run watch`
@@ -12,3 +14,5 @@ Don't forget to Migrate and Seed to get the dummy database!
 ### Screenshots:
 ![plot](./screenshots/Dashboard.png)
 ![plot](./screenshots/Products.png)
+
+
