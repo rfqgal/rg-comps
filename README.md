@@ -22,3 +22,5 @@ Ohoo i got accepted on a software houseeee
 How to Reach Me 
 Instagram : 
 Twitter:
+
+Saya menjadikan GitHub sebagai media untuk mendokumentasikan karya saya
