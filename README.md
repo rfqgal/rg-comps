@@ -19,6 +19,8 @@ I used this for applying job  ^^
 
 Ohoo i got accepted on a software houseeee
 
-How to Reach Me 
-Instagram : 
-Twitter:
+How to Reach Me <br>
+Instagram : <br>
+Twitter: <br>
+
+Saya menjadikan GitHub sebagai media dokumentasi karya saya
